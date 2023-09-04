@@ -1,8 +1,11 @@
 import Image from "next/image";
 import Excard from "@components/Excard";
 import Card from "@components/Card";
+import { BiLinkExternal } from "react-icons/bi";
+import { getSortedPostsData } from "@lib/posts";
 
 const Home = () => {
+  const posts = getSortedPostsData();
   return (
     <article className="w-full h-auto">
       <section className="container flex flex-col md:flex-row px-5 py-1 mx-auto items-center">
@@ -20,7 +23,9 @@ const Home = () => {
           </p>
           <div className="justify-center md:justify-start">
             <button className="bg-indigo-500 hover:bg-indigo-600 py-2 px-6 item-center justify-center rounded">
-              <p className="text-white">Resume</p>
+              <span className="inline-flex text-white">
+                Resume <BiLinkExternal className="text-sm" />
+              </span>
             </button>
           </div>
         </div>
@@ -65,8 +70,10 @@ const Home = () => {
                 truffaut hexagon try-hard chambray.
               </p>
               <div className="flex justify-center">
-                <button className="bg-gray-100 text-gray-700 hover:bg-gray-300 py-2 px-6 rounded">
-                  Transcript
+                <button className="bg-gray-100 hover:bg-gray-300 py-2 px-6 rounded">
+                  <span className="inline-flex text-gray-700">
+                    Transcript <BiLinkExternal className="text-sm" />
+                  </span>
                 </button>
               </div>
             </div>
@@ -80,12 +87,11 @@ const Home = () => {
       </section>
       <section className="container flex flex-col items-center justify-center px-2 md:px-5 sm:mx-auto py-4 mb-8 md:mb-20  gap-2">
         <h1 className="text-3xl mb-8 font-medium text-gray-700">Projects</h1>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4">
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-        </div>
+        <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4">
+          {posts.map((post) => (
+            <Card key={post.id} post={post} />
+          ))}
+        </ul>
       </section>
     </article>
   );

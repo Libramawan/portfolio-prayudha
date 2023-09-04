@@ -1,30 +1,44 @@
 import Image from "next/image";
+import { FaArrowRight } from "react-icons/fa";
+import Link from "next/link";
+import getFormattedDate from "@lib/getFormattedDate";
 
-const Card = () => {
+type Props = {
+  post: BlogPosts;
+};
+
+const Card = ({ post }: Props) => {
+  const { title, date, image_link, desc } = post;
+  const formattedDate = getFormattedDate(date);
+
   return (
-    <div className="text-gray-700 border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
-      <div className="flex flex-wrap gap-1 mx-auto">
-        <Image
-          src="https://i.ibb.co/0JJdLRb/toga-compress.png"
-          alt="hero"
-          width={0}
-          height={0}
-          sizes="100vw"
-          style={{ width: "100%", height: "auto" }}
-        />
-        <div className="flex flex-col md:flex-grow px-4 py-2 gap-2">
-          <div className="mb-2">
-            <span className="text-md text-gray-500">12 Jun 2019</span>
+    <li key={post.id}>
+      <div className="text-gray-700 border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+        <div className="flex flex-wrap gap-1 mx-auto">
+          <div className="relative w-full h-72">
+            <Image
+              src={image_link}
+              alt=""
+              fill
+              style={{ objectFit: "cover" }}
+            />
           </div>
-          <h1 className="text-xl font-medium">The Catalyzer</h1>
-          <p className="leading-relaxed">
-            Photo booth fam kinfolk cold-pressed sriracha leggings jianbing
-            microdosing tousled waistcoat.
-          </p>
-          <a className="text-indigo-500">Learn More</a>
+          <div className="flex flex-col md:flex-grow px-4 py-2 gap-2">
+            <div className="mb-2">
+              <span className="text-md text-gray-500">{formattedDate}</span>
+            </div>
+            <h1 className="text-xl font-medium">{title}</h1>
+            <p className="leading-relaxed">{desc}</p>
+            <Link
+              className="inline-flex gap-1 items-center text-md text-indigo-700 hover:text-indigo-400"
+              href={`/posts/${post.id}`}
+            >
+              Learn More <FaArrowRight />
+            </Link>
+          </div>
         </div>
       </div>
-    </div>
+    </li>
   );
 };
 

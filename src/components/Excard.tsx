@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { FaArrowRight } from "react-icons/fa";
 
 const Excard = () => {
   return (
@@ -29,20 +30,9 @@ const Excard = () => {
               party messenger bag selfies, poke vaporware kombucha lumbersexual
               pork belly polaroid hoodie portland craft beer.
             </p>
-            <a className="inline-flex items-center text-indigo-700 hover:text-indigo-400 mt-4 mb-2">
-              Read More
-              <svg
-                className="w-4 h-4 ml-1"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth="2"
-                fill="none"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M5 12h14"></path>
-                <path d="M12 5l7 7-7 7"></path>
-              </svg>
+
+            <a className="inline-flex gap-1 items-center text-md text-indigo-700 hover:text-indigo-400 mt-4 mb-2">
+              Read More <FaArrowRight />
             </a>
           </div>
         </div>
