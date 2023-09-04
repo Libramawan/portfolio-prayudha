@@ -8,7 +8,7 @@ import Link from "next/link";
 const Home = () => {
   const posts = getSortedPostsData();
   return (
-    <article className="w-full h-auto">
+    <main className="w-full h-auto">
       <section className="container flex flex-col md:flex-row px-5 py-1 mx-auto items-center">
         <div className="lg:flex-grow md:w-full flex flex-col md:items-start md:text-left mb-16 md:mb-0 text-center">
           <h1 className="sm:text-4xl text-3xl mb-4 text-gray-700 font-medium">
@@ -115,7 +115,7 @@ const Home = () => {
           ))}
         </ul>
       </section>
-    </article>
+    </main>
   );
 };
 
