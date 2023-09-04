@@ -10,8 +10,10 @@ const Footer = () => {
         </p>
 
         <Link
-          className="inline-flex justify-center text-center text-white hover:text-gray-700 text-sm sm:ml-2 mt-2 sm:mt-0"
+          className="inline-flex justify-center text-center text-white hover:text-gray-400 text-sm sm:ml-2 mt-2 sm:mt-0"
           href="https://wa.me/+6281324788202"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           +6281324788202
           <FaWhatsapp />
@@ -19,22 +21,28 @@ const Footer = () => {
 
         <span className="inline-flex sm:ml-auto mt-2 sm:mt-0 justify-center sm:justify-start gap-6 text-xl text-white hover:text-gray-700">
           <Link
-            className="text-white hover:text-gray-700"
+            className="text-white hover:text-gray-400"
             href="https://github.com/Libramawan?tab=repositories"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <FaGithub />
           </Link>
 
           <Link
-            className="text-white hover:text-gray-700"
+            className="text-white hover:text-gray-400"
             href="https://www.instagram.com/libramawan/"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <FaInstagram />
           </Link>
 
           <Link
-            className="text-white hover:text-gray-700"
+            className="text-white hover:text-gray-400"
             href="https://www.linkedin.com/in/prayudha-adhitia/"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <FaLinkedin />
           </Link>
