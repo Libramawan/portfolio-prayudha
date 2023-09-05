@@ -13,7 +13,7 @@ const Card = ({ post }: Props) => {
 
   return (
     <li key={post.id}>
-      <div className="text-gray-700 border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+      <div className="text-gray-700 dark:text-gray-300 dark:bg-slate-800 border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
         <div className="flex flex-wrap gap-1 mx-auto">
           <div className="relative w-full h-72">
             <Image
@@ -25,15 +25,17 @@ const Card = ({ post }: Props) => {
           </div>
           <div className="flex flex-col md:flex-grow px-4 py-2 gap-2">
             <div className="mb-2">
-              <span className="text-md text-gray-500">{formattedDate}</span>
+              <span className="text-md text-gray-500 dark:text-gray-400">
+                {formattedDate}
+              </span>
             </div>
             <h1 className="text-xl font-medium">{title}</h1>
             <p className="leading-relaxed">{desc}</p>
             <Link
-              className="inline-flex gap-1 items-center text-md text-indigo-700 hover:text-indigo-400"
+              className="inline-flex gap-1 items-center text-md text-indigo-700 dark:text-indigo-300 hover:text-indigo-400"
               href={`/posts/${post.id}`}
             >
-              Learn More <FaArrowRight />
+              Read More <FaArrowRight />
             </Link>
           </div>
         </div>

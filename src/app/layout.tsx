@@ -2,6 +2,7 @@ import "@styles/globals.css";
 import Nav from "@components/Nav";
 import Footer from "@components/Footer";
 import { roboto_slab } from "@styles/fonts";
+import { ThemeProvider } from "./theme-provider";
 
 export const metadata = {
   title: "Prayudha",
@@ -11,10 +12,12 @@ export const metadata = {
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="en" className={`${roboto_slab.variable} font-slab`}>
-      <body>
-        <Nav />
-        <main>{children}</main>
-        <Footer />
+      <body className="dark:bg-dark-custom">
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <Nav />
+          <main>{children}</main>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

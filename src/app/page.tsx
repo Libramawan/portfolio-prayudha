@@ -8,15 +8,15 @@ import Link from "next/link";
 const Home = () => {
   const posts = getSortedPostsData();
   return (
-    <main className="w-full h-auto">
+    <main className="w-full min-h-screen">
       <section className="container flex flex-col md:flex-row px-5 py-1 mx-auto items-center">
         <div className="lg:flex-grow md:w-full flex flex-col md:items-start md:text-left mb-16 md:mb-0 text-center">
-          <h1 className="sm:text-4xl text-3xl mb-4 text-gray-700 font-medium">
+          <h1 className="sm:text-4xl text-3xl mb-4 text-gray-700 dark:text-gray-300 font-medium">
             Hi,
             <br className="max-md:hidden" />
             the name is Prayudha
           </h1>
-          <p className="mb-8 text-gray-600">
+          <p className="mb-8 text-gray-600 dark:text-gray-400">
             Copper mug try-hard pitchfork pour-over freegan heirloom neutra air
             plant cold-pressed tacos poke beard tote bag. Heirloom echo park
             mlkshk tote bag selvage hot chicken authentic tumeric truffaut
@@ -47,7 +47,7 @@ const Home = () => {
           />
         </div>
       </section>
-      <section className="bg-navy-custom text-white">
+      <section className="bg-navy-custom dark:bg-slate-800 text-gray-200 dark:text-gray-300">
         <div className="container flex flex-col mx-auto px-5 py-24 gap-2">
           <div className="flex flex-col md:flex-row items-center justify-center md:justify-end mb-8 md:mb-0">
             <h1 className="text-3xl font-medium">About</h1>
@@ -103,12 +103,16 @@ const Home = () => {
         </div>
       </section>
       <section className="container flex flex-col items-center justify-center px-2 md:px-5 sm:mx-auto py-20 gap-2">
-        <h1 className="text-3xl mb-8 font-medium text-gray-700">Experiences</h1>
+        <h1 className="text-3xl mb-8 font-medium text-gray-700 dark:text-gray-300">
+          Experiences
+        </h1>
         <Excard />
         <Excard />
       </section>
-      <section className="container flex flex-col items-center justify-center px-2 md:px-5 sm:mx-auto py-4 mb-8 md:mb-20  gap-2">
-        <h1 className="text-3xl mb-8 font-medium text-gray-700">Projects</h1>
+      <section className="container flex flex-col items-center justify-center px-2 md:px-5 sm:mx-auto py-4 mb-8 md:mb-20 gap-2">
+        <h1 className="text-3xl mb-8 font-medium text-gray-700 dark:text-gray-300">
+          Projects
+        </h1>
         <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4">
           {posts.map((post) => (
             <Card key={post.id} post={post} />

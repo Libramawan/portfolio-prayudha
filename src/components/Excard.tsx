@@ -3,7 +3,7 @@ import { FaArrowRight } from "react-icons/fa";
 
 const Excard = () => {
   return (
-    <div className="container mx-auto border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden text-gray-700 mb-8">
+    <div className="container mx-auto border-2 border-gray-200 dark:bg-slate-800 border-opacity-60 rounded-lg overflow-hidden text-gray-700 dark:text-gray-300 mb-8">
       <div className="-my-8 divide-y-2 divide-gray-100">
         <div className="flex flex-wrap md:flex-nowrap py-8 gap-4">
           <div className="hidden md:flex flex-col flex-shrink-0 md:w-64 md:mb-0 mb-6">
@@ -18,7 +18,9 @@ const Excard = () => {
           </div>
           <div className="md:flex-grow px-4 py-2">
             <div className="mt-2 mb-4">
-              <span className="text-md text-gray-500">12 Jun 2019</span>
+              <span className="text-md text-gray-500 dark:text-gray-400">
+                12 Jun 2019
+              </span>
             </div>
 
             <h2 className="text-2xl font-medium mb-2">
@@ -31,7 +33,7 @@ const Excard = () => {
               pork belly polaroid hoodie portland craft beer.
             </p>
 
-            <a className="inline-flex gap-1 items-center text-md text-indigo-700 hover:text-indigo-400 mt-4 mb-2">
+            <a className="inline-flex gap-1 items-center text-md text-indigo-700 dark:text-indigo-300 hover:text-indigo-400 mt-4 mb-2">
               Read More <FaArrowRight />
             </a>
           </div>

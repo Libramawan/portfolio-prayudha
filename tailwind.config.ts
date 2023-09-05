@@ -6,11 +6,13 @@ const config: Config = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  darkMode: ["class"],
   theme: {
     extend: {
       colors: {
         "navy-custom": "#344758",
         "black-custom": "#20272D",
+        "dark-custom": "#0F172A",
       },
 
       fontFamily: {
