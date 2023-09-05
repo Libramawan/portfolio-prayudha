@@ -13,7 +13,7 @@ const Card = ({ post }: Props) => {
 
   return (
     <li key={post.id}>
-      <div className="text-gray-700 dark:text-gray-300 dark:bg-slate-800 border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+      <div className="h-full text-gray-700 dark:text-gray-300 dark:bg-slate-800 border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
         <div className="flex flex-wrap gap-1 mx-auto">
           <div className="relative w-full h-72">
             <Image
@@ -23,7 +23,7 @@ const Card = ({ post }: Props) => {
               style={{ objectFit: "cover" }}
             />
           </div>
-          <div className="flex flex-col md:flex-grow px-4 py-2 gap-2">
+          <div className="w-full flex flex-col md:flex-grow px-4 py-2 gap-2">
             <div className="mb-2">
               <span className="text-md text-gray-500 dark:text-gray-400">
                 {formattedDate}

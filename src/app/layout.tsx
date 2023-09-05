@@ -12,7 +12,7 @@ export const metadata = {
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="en" className={`${roboto_slab.variable} font-slab`}>
-      <body className="dark:bg-dark-custom">
+      <body className="flex flex-col w-full min-h-screen justify-between dark:bg-dark-custom">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Nav />
           <main>{children}</main>

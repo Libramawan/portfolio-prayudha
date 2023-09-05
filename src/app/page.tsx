@@ -8,8 +8,8 @@ import Link from "next/link";
 const Home = () => {
   const posts = getSortedPostsData();
   return (
-    <main className="w-full min-h-screen">
-      <section className="container flex flex-col md:flex-row px-5 py-1 mx-auto items-center">
+    <main>
+      <section className="container flex flex-col md:flex-row px-5 py-1 mt-20 md:mt-0 mx-auto items-center">
         <div className="lg:flex-grow md:w-full flex flex-col md:items-start md:text-left mb-16 md:mb-0 text-center">
           <h1 className="sm:text-4xl text-3xl mb-4 text-gray-700 dark:text-gray-300 font-medium">
             Hi,
@@ -53,7 +53,7 @@ const Home = () => {
             <h1 className="text-3xl font-medium">About</h1>
           </div>
           <div className="flex md:flex-row flex-col items-center">
-            <div className="w-1/3 md:w-2/5 lg:w-1/3 px-4">
+            <div className="w-1/2 md:w-2/5 lg:w-1/3 px-4">
               <div className="rounded-full overflow-hidden border-none">
                 <Image
                   src="https://i.ibb.co/0JJdLRb/toga-compress.png"
@@ -106,14 +106,16 @@ const Home = () => {
         <h1 className="text-3xl mb-8 font-medium text-gray-700 dark:text-gray-300">
           Experiences
         </h1>
-        <Excard />
-        <Excard />
+        <div className="px-2">
+          <Excard />
+          <Excard />
+        </div>
       </section>
       <section className="container flex flex-col items-center justify-center px-2 md:px-5 sm:mx-auto py-4 mb-8 md:mb-20 gap-2">
         <h1 className="text-3xl mb-8 font-medium text-gray-700 dark:text-gray-300">
           Projects
         </h1>
-        <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4">
+        <ul className="container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 px-2">
           {posts.map((post) => (
             <Card key={post.id} post={post} />
           ))}
