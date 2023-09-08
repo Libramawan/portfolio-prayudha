@@ -10,6 +10,8 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        "blue-custom": "#3B82F6",
+        "blue-custom-hover": "#376bc8",
         "navy-custom": "#344758",
         "black-custom": "#20272D",
         "dark-custom": "#0F172A",

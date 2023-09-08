@@ -32,7 +32,7 @@ const Card = ({ post }: Props) => {
             <h1 className="text-xl font-medium">{title}</h1>
             <p className="leading-relaxed">{desc}</p>
             <Link
-              className="inline-flex gap-1 items-center text-md text-indigo-700 dark:text-indigo-300 hover:text-indigo-400"
+              className="inline-flex w-fit gap-1 items-center text-md text-indigo-700 dark:text-indigo-300 hover:text-indigo-400 dark:hover:text-indigo-100"
               href={`/posts/${post.id}`}
             >
               Read More <FaArrowRight />
