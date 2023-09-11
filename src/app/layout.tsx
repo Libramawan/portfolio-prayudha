@@ -3,6 +3,7 @@ import Nav from "@components/Nav";
 import Footer from "@components/Footer";
 import { roboto_slab } from "@styles/fonts";
 import { ThemeProvider } from "./theme-provider";
+import ScrollToTopButton from "@components/ScrollToTopButton";
 
 export const metadata = {
   title: "Prayudha",
@@ -15,7 +16,10 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
       <body className="flex flex-col w-full min-h-screen justify-between dark:bg-dark-custom">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Nav />
-          <main>{children}</main>
+          <main>
+            {children}
+            <ScrollToTopButton />
+          </main>
           <Footer />
         </ThemeProvider>
       </body>
