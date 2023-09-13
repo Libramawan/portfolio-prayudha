@@ -1,9 +1,8 @@
 import Image from "next/image";
 import Card from "@components/Card";
+import ExpCard from "@components/ExpCard";
 import { getSortedPostsData } from "@lib/posts";
 import { BiLinkExternal } from "react-icons/bi";
-import Link from "next/link";
-import ExpCard from "@components/ExpCard";
 
 export const revalidate = 10;
 
@@ -21,10 +20,10 @@ const Home = () => {
             </span>
           </h1>
           <p className="mb-8 text-gray-600 dark:text-gray-400">
-            Greetings, I`&apos;`m delighted to present my portfolio
+            Greetings, I&apos;m delighted to present my portfolio
           </p>
           <div className="justify-center md:justify-start">
-            <Link
+            <a
               className="bg-blue-custom hover:bg-blue-custom-hover dark:bg-indigo-500 dark:hover:bg-indigo-600 py-2 px-6 item-center justify-center rounded"
               href="https://drive.google.com/file/d/18EOv7vwK8cRsQjYYv3sj-htFhMBcbtuK/view?usp=sharing"
               target="_blank"
@@ -33,7 +32,7 @@ const Home = () => {
               <span className="inline-flex text-white">
                 Resume <BiLinkExternal className="text-sm" />
               </span>
-            </Link>
+            </a>
           </div>
         </div>
         <div className="lg:max-w-lg hidden md:flex">
@@ -69,19 +68,19 @@ const Home = () => {
               </h1>
               <p className="py-4">
                 I am currently a Fresh Graduate at the Padjadjaran Univeristy in
-                Jatinangor, Sumedang. I`&apos;`m originally from Bandung,
+                Jatinangor, Sumedang. I&apos;m originally from Bandung,
                 Indonesia.
               </p>
               <h1 className="text-3xl py-4 font-medium">
                 Educational Background
               </h1>
               <p className="mb-8">
-                I completed my Bachelor`&apos;`s degree in Computer Science from
+                I completed my Bachelor&apos;s degree in Computer Science from
                 Padjadjaran University in November 2022. My academic performance
                 was consistently strong, achieving a 3.85 GPA out of 4.0.
               </p>
               <div className="flex justify-center gap-4">
-                <Link
+                <a
                   className="bg-gray-100 hover:bg-gray-300 py-2 px-6 rounded"
                   href="https://drive.google.com/file/d/1TgoM1x1mAMmhRFaJiDcKg-cf1Y8HKFaI/view?usp=sharing"
                   target="_blank"
@@ -91,8 +90,8 @@ const Home = () => {
                     Certificate
                     <BiLinkExternal className="text-sm" />
                   </span>
-                </Link>
-                <Link
+                </a>
+                <a
                   className="bg-gray-100 hover:bg-gray-300 py-2 px-6 rounded"
                   href="https://drive.google.com/file/d/16CQAAD4oq8swjRRJ2wFdpsVoKMGC5xxD/view?usp=sharing"
                   target="_blank"
@@ -101,7 +100,7 @@ const Home = () => {
                   <span className="inline-flex text-gray-700">
                     Transcript <BiLinkExternal className="text-sm" />
                   </span>
-                </Link>
+                </a>
               </div>
             </div>
           </div>

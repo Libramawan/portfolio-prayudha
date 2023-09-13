@@ -1,9 +1,10 @@
 import "@styles/globals.css";
 import Nav from "@components/Nav";
 import Footer from "@components/Footer";
+import ScrollToTopButton from "@components/ScrollToTopButton";
+import Contact from "@components/Contact";
 import { roboto_slab } from "@styles/fonts";
 import { ThemeProvider } from "./theme-provider";
-import ScrollToTopButton from "@components/ScrollToTopButton";
 
 export const metadata = {
   title: "Prayudha",
@@ -17,6 +18,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Nav />
           <main>
+            <Contact />
             {children}
             <ScrollToTopButton />
           </main>

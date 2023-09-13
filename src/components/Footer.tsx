@@ -1,15 +1,22 @@
+"use client";
+import { useRouter } from "next/navigation";
 import { FaWhatsapp, FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
-import Link from "next/link";
 
 const Footer = () => {
+  const router = useRouter();
   return (
     <footer className="bg-black-custom">
       <div className="container flex flex-wrap flex-col sm:flex-row mx-auto p-5">
-        <p className="text-white text-sm text-center sm:text-left">
-          prayudha.adhitia@gmail.com —
-        </p>
-
-        <Link
+        <button
+          className="text-white hover:text-gray-400 text-sm text-center sm:text-left"
+          type="button"
+          onClick={() => {
+            router.push("mailto:prayudha.adhitia@gmail.com");
+          }}
+        >
+          prayudha.adhitia@gmail.com
+        </button>
+        <a
           className="inline-flex justify-center text-center text-white hover:text-gray-400 text-sm sm:ml-2 mt-2 sm:mt-0"
           href="https://wa.me/+6281324788202"
           target="_blank"
@@ -17,35 +24,35 @@ const Footer = () => {
         >
           +6281324788202
           <FaWhatsapp />
-        </Link>
+        </a>
 
         <span className="inline-flex sm:ml-auto mt-2 sm:mt-0 justify-center sm:justify-start gap-6 text-xl text-white hover:text-gray-700">
-          <Link
+          <a
             className="text-white hover:text-gray-400"
             href="https://github.com/Libramawan?tab=repositories"
             target="_blank"
             rel="noopener noreferrer"
           >
             <FaGithub />
-          </Link>
+          </a>
 
-          <Link
+          <a
             className="text-white hover:text-gray-400"
             href="https://www.instagram.com/libramawan/"
             target="_blank"
             rel="noopener noreferrer"
           >
             <FaInstagram />
-          </Link>
+          </a>
 
-          <Link
+          <a
             className="text-white hover:text-gray-400"
             href="https://www.linkedin.com/in/prayudha-adhitia/"
             target="_blank"
             rel="noopener noreferrer"
           >
             <FaLinkedin />
-          </Link>
+          </a>
         </span>
       </div>
     </footer>
