@@ -1,23 +1,29 @@
-import ListProject from "@components/ListProject";
-import { getSortedPostsData } from "@lib/posts";
+import { getAllPosts } from "@lib/get-posts";
+import ProjectList from "@components/ui/project-list";
+import Title from "@components/shared/title";
 
-export const revalidate = 10;
+function getProjectList() {
+  const posts = getAllPosts();
+  return {
+    props: posts,
+    revalidate: 10,
+  };
+}
 
-const Projects = () => {
-  const posts = getSortedPostsData();
+export default function Projects() {
+  const projects = getProjectList();
   return (
-    <section className="container flex flex-col items-center justify-center px-2 md:px-5 sm:mx-auto py-4 mb-8 md:mt-8 md:mb-20 gap-2">
-      <h1 className="text-3xl mb-8 mt-8 md:mt-0 font-medium text-gray-700 dark:text-gray-300">
-        My{" "}
-        <span className="text-blue-custom dark:text-indigo-300">Projects</span>
-      </h1>
-      <ul className="container">
-        {posts.map((post) => (
-          <ListProject key={post.id} post={post} />
-        ))}
-      </ul>
+    <section className="container mx-auto">
+      <div className="flex flex-col items-center justify-center gap-2 p-8">
+        <div className="flex items-center justify center p-8">
+          <Title text={"My"} spanText={"Projects"} />
+        </div>
+        <ul className="container">
+          {projects.props.map((project: BlogPosts) => (
+            <ProjectList key={project.slug} post={project} />
+          ))}
+        </ul>
+      </div>
     </section>
   );
-};
-
-export default Projects;
+}

@@ -1,22 +1,22 @@
-import getFormattedDate from "../../../../lib/getFormattedDate";
-import { getPostData, getSortedPostsData } from "../../../../lib/posts";
-import { notFound } from "next/navigation";
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
+import { notFound } from "next/navigation";
+
+import { getPostData, getAllPosts } from "@lib/get-posts";
 
 export function generateStaticParams() {
-  const posts = getSortedPostsData();
+  const posts = getAllPosts();
 
   return posts.map((post) => ({
-    postId: post.id,
+    postSlug: post.slug,
   }));
 }
 
-export function generateMetadata({ params }: { params: { postId: string } }) {
-  const posts = getSortedPostsData();
-  const { postId } = params;
+export function generateMetadata({ params }: { params: { postSlug: string } }) {
+  const posts = getAllPosts();
+  const { postSlug } = params;
 
-  const post = posts.find((post) => post.id === postId);
+  const post = posts.find((post) => post.slug === postSlug);
 
   if (!post) {
     return {
@@ -29,14 +29,25 @@ export function generateMetadata({ params }: { params: { postId: string } }) {
   };
 }
 
-export default async function Post({ params }: { params: { postId: string } }) {
-  const posts = getSortedPostsData();
-  const { postId } = params;
+async function getPostDataBySlug(postSlug: string) {
+  const { title, date, coverImage, contentHtml } = await getPostData(postSlug);
+  const blogPostWithHtml = { title, date, coverImage, contentHtml };
+  return blogPostWithHtml;
+}
 
-  if (!posts.find((post) => post.id === postId)) notFound();
+export default async function Posts({
+  params,
+}: {
+  params: { postSlug: string };
+}) {
+  const posts = generateStaticParams();
+  const { postSlug } = params;
 
-  const { title, date, image_link, contentHtml } = await getPostData(postId);
-  const projectDate = getFormattedDate(date);
+  if (!posts.find((post) => post.postSlug === postSlug)) notFound();
+
+  const { title, date, coverImage, contentHtml } = await getPostDataBySlug(
+    postSlug
+  );
 
   return (
     <main className="min-h-screen flex flex-col justify-center relative overflow-hidden py-8 lg:py-12">
@@ -45,12 +56,8 @@ export default async function Post({ params }: { params: { postId: string } }) {
         <div className="flex flex-row justify-center">
           <div className="prose prose-xl prose-slate dark:prose-invert">
             <h2 className="mb-2">{title}</h2>
-
-            <p className="text-sm text-gray-500 dark:text-gray-400">
-              {projectDate}
-            </p>
-
-            <Image src={image_link} alt="" width={200} height={200} />
+            <p className="text-sm text-gray-500 dark:text-gray-400">{date}</p>
+            <Image src={coverImage} alt="" width={200} height={200} />
             <article>
               <section dangerouslySetInnerHTML={{ __html: contentHtml }} />
               <div className="flex justify-center mb-4">

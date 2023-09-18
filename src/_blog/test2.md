@@ -1,8 +1,8 @@
 ---
 title: "test2"
 date: "2021-03-15"
-image_link: "https://i.ibb.co/0JJdLRb/toga-compress.png"
-desc: "test2"
+coverImage: "https://i.ibb.co/0JJdLRb/toga-compress.png"
+excerpt: "test2"
 ---
 
 Next.js has two forms of pre-rendering: **Static Generation** and **Server-side Rendering**. The difference is in **when** it generates the HTML for a page.

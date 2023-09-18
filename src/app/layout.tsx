@@ -1,22 +1,27 @@
 import "@styles/globals.css";
-import Nav from "@components/Nav";
-import Footer from "@components/Footer";
-import ScrollToTopButton from "@components/ScrollToTopButton";
-import Contact from "@components/Contact";
 import { roboto_slab } from "@styles/fonts";
-import { ThemeProvider } from "./theme-provider";
+
+import ThemeProvider from "@components/providers/theme-provider";
+import Navbar from "@components/ui/navbar";
+import Footer from "@components/ui/footer";
+import ScrollToTopButton from "@components/ui/scroll-to-top-button";
+import Contact from "@components/ui/contact";
 
 export const metadata = {
   title: "Prayudha",
   description: "Portofolio of Prayudha Adhitia Libramawan",
 };
 
-const RootLayout = ({ children }: { children: React.ReactNode }) => {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en" className={`${roboto_slab.variable} font-slab`}>
       <body className="flex flex-col w-full min-h-screen justify-between dark:bg-dark-custom">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <Nav />
+          <Navbar />
           <main>
             <Contact />
             {children}
@@ -27,6 +32,4 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
       </body>
     </html>
   );
-};
-
-export default RootLayout;
+}

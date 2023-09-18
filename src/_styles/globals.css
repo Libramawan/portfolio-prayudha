@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+h1 {
+  @apply text-3xl sm:text-4xl font-bold text-gray-700 dark:text-gray-300;
+}
+
+h2 {
+  @apply text-3xl font-bold;
+}
+
+h3 {
+  @apply text-xl font-medium md:text-2xl text-gray-700 dark:text-gray-300;
+}
+
+h4 {
+  @apply text-xl font-medium text-gray-700 dark:text-gray-300;
+}
+
+h5 {
+  @apply text-gray-500 dark:text-indigo-300;
+}
+
+.text_black {
+  @apply text-gray-700 dark:text-gray-300 leading-relaxed;
+}
+
+.text_white {
+  @apply text-gray-300 dark:text-gray-300 leading-relaxed;
+}
+
+.bg_navy {
+  @apply bg-navy-custom dark:bg-slate-800;
+}
+
+.bg_blue {
+  @apply bg-blue-custom dark:bg-indigo-500;
+}
+
+.bg_white {
+  @apply bg-white dark:bg-black-custom;
+}
+
+.button_container {
+  @apply py-2 px-4 rounded;
+}
+
+.button_container span {
+  @apply inline-flex gap-1 items-center justify-center;
+}
+
+.button_read {
+  @apply text-white bg-blue-custom dark:bg-indigo-500 hover:bg-blue-custom-hover dark:hover:bg-indigo-600;
+}
+
+.button_github {
+  @apply text-blue-custom hover:text-white dark:text-white border-2 bg-white dark:bg-slate-800 border-blue-custom dark:border-gray-700 hover:bg-blue-custom dark:hover:bg-indigo-500;
+}
+
+.button_external {
+  @apply bg-blue-custom hover:bg-blue-custom-hover dark:bg-indigo-500 dark:hover:bg-indigo-600 text-white;
+}
+
+.button_external_alt {
+  @apply bg-gray-100 hover:bg-gray-300 text-gray-700;
+}

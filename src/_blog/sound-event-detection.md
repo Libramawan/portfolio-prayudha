@@ -1,8 +1,8 @@
 ---
-title: "Sound-event-detection"
+title: "Sound Event Detection"
 date: "2023-03-16"
-image_link: "https://i.ibb.co/QkQYCKQ/sed1.png"
-desc: "testtist"
+coverImage: "https://i.ibb.co/QkQYCKQ/sed1.png"
+excerpt: "testtist"
 ---
 
 # Heading (rank 1)
