@@ -43,7 +43,7 @@ export default function ScrollToTopButton() {
 
   return (
     <motion.button
-      className="fixed bg_blue hover:bg-blue-custom-hover dark:hover:bg-indigo-600 p-4 md:p-8 text-white rounded-full md:rounded-r bottom-2 sm:bottom-16 right-4 sm:right-2 md:right-0"
+      className="fixed bg_blue hover:bg-blue-custom-hover dark:hover:bg-indigo-600 p-4 md:p-8 text-white rounded-full md:rounded-r bottom-14 sm:bottom-16 right-4 sm:right-2 md:right-0"
       variants={scrollToTopVariants}
       initial="hide"
       animate={controls}

@@ -19,8 +19,8 @@ export default function Projects() {
           <Title text={"My"} spanText={"Projects"} />
         </div>
         <ul className="container">
-          {projects.props.map((project: BlogPosts) => (
-            <ProjectList key={project.slug} post={project} />
+          {projects.props.map((project: BlogPosts, index: number) => (
+            <ProjectList key={project.slug} post={project} index={index} />
           ))}
         </ul>
       </div>

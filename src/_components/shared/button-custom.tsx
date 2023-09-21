@@ -3,7 +3,7 @@ import { FaArrowRight } from "react-icons/fa";
 import { BiLinkExternal } from "react-icons/bi";
 import { FaGithub } from "react-icons/fa";
 
-export function ButtonRead({ url }: buttonURL) {
+export function ButtonRead({ url }: { url: string }) {
   return (
     <button type="button" className="button_container button_read">
       <Link href={url}>
@@ -37,7 +37,7 @@ export function ButtonToExternal({
   );
 }
 
-export function ButtonToGithub({ url }: buttonURL) {
+export function ButtonToGithub({ url }: { url: string }) {
   return (
     <button type="button" className="button_container button_github">
       <a href={url} target="_blank" rel="noopener noreferrer">

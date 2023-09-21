@@ -1,11 +1,29 @@
+"use client";
+
+import { motion } from "framer-motion";
+
 import { ButtonRead } from "@components/shared/button-custom";
 import { ImageCover } from "../shared/image-custom";
 
-export default function ProjectCard({ post }: { post: BlogPosts }) {
+type Props = {
+  post: BlogPosts;
+  index: number;
+};
+
+export default function ProjectCard({ post, index }: Props) {
+  const i = index;
   const { title, date, coverImage, excerpt } = post;
 
   return (
-    <li key={post.slug}>
+    <motion.li
+      key={post.slug}
+      initial={{ y: 100, opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      viewport={{
+        once: true,
+      }}
+      transition={{ delay: 0.5 * i, duration: 0.8, type: "tween" }}
+    >
       <div className="container dark:bg-slate-800 rounded">
         <div className="flex flex-wrap gap-1 mx-auto">
           <div className="relative w-full h-72">
@@ -19,6 +37,6 @@ export default function ProjectCard({ post }: { post: BlogPosts }) {
           </div>
         </div>
       </div>
-    </li>
+    </motion.li>
   );
 }

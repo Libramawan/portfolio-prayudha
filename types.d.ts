@@ -6,14 +6,6 @@ type BlogPosts = {
   excerpt: string;
 };
 
-type LocalData = {
-  id: number;
-  title: string;
-  date: string;
-  coverImage: string;
-  excerpt: string;
-};
-
 type TitleText = {
   text: string;
   spanText?: string;
@@ -24,10 +16,6 @@ type ButtonExternal = {
   text: string;
   url: string;
   altColor?: boolean;
-};
-
-type buttonURL = {
-  url: string;
 };
 
 type imageURL = {

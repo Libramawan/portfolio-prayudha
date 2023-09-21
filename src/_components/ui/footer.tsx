@@ -7,7 +7,7 @@ export default function Footer() {
   return (
     <footer className="bg-black-custom">
       <div className="container mx-auto">
-        <div className="flex flex-wrap flex-col sm:flex-row p-5">
+        <div className="flex flex-wrap flex-col sm:flex-row p-5 mb-12 sm:mb-0">
           <button
             className="text-white hover:text-gray-400 text-sm text-center sm:text-left"
             type="button"

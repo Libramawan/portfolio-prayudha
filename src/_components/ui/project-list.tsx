@@ -1,11 +1,28 @@
+"use client";
+
+import { motion } from "framer-motion";
 import { ButtonRead, ButtonToGithub } from "@components/shared/button-custom";
 import { ImageFull } from "@components/shared/image-custom";
 
-export default function ProjectList({ post }: { post: BlogPosts }) {
+type Props = {
+  post: BlogPosts;
+  index: number;
+};
+
+export default function ProjectList({ post, index }: Props) {
+  const i = index;
   const { title, date, coverImage, excerpt } = post;
 
   return (
-    <li key={post.slug}>
+    <motion.li
+      key={post.slug}
+      initial={{ y: 100, opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      viewport={{
+        once: true,
+      }}
+      transition={{ delay: 0.5 * i, duration: 0.8, type: "tween" }}
+    >
       <div className="mt-8 px-0 lg:px-24">
         <div className="h-fit border-opacity-60 overflow-hidden">
           <div className="grid md:grid-cols-2">
@@ -29,6 +46,6 @@ export default function ProjectList({ post }: { post: BlogPosts }) {
           </div>
         </div>
       </div>
-    </li>
+    </motion.li>
   );
 }
