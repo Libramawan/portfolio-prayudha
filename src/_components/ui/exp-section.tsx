@@ -1,6 +1,8 @@
 "use client";
 
+import { Fragment } from "react";
 import { motion } from "framer-motion";
+import { Icon } from "@iconify/react";
 import useSectionInView from "@lib/use-section-in-view";
 import Title from "../shared/title";
 import { ImageFull } from "@components/shared/image-custom";
@@ -50,6 +52,25 @@ export default function ExpSection() {
                         <div className="flex flex-col justify-center max-w-3xl text-center lg:text-left col-span-full lg:col-span-3">
                           <h5>{data.date}</h5>
                           <h3>{data.title}</h3>
+                          <div className="inline-flex justify-center lg:justify-start items-center gap-2">
+                            {data.icons !== undefined && (
+                              <>
+                                <h5>Tech stack:</h5>
+                                <span className="inline-flex gap-1 text-2xl">
+                                  {data.icons.map(
+                                    (icon: string, index: number) => {
+                                      return (
+                                        <Fragment key={index}>
+                                          <Icon icon={`${icon}`} />
+                                        </Fragment>
+                                      );
+                                    }
+                                  )}
+                                </span>
+                              </>
+                            )}
+                          </div>
+
                           <div className="py-4">
                             <p className="text_black">{data.excerpt}</p>
                           </div>

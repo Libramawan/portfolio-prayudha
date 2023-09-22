@@ -2,6 +2,14 @@
 title: "test2"
 date: "2021-03-15"
 coverImage: "https://i.ibb.co/0JJdLRb/toga-compress.png"
+icons:
+  [
+    "logos:python",
+    "logos:jupyter",
+    "skill-icons:flask-dark",
+    "vscode-icons:file-type-html",
+    "devicon:tailwindcss",
+  ]
 excerpt: "test2"
 ---
 

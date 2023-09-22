@@ -1,4 +1,4 @@
-import { links, experiencesData } from "./data";
+import { links } from "./data";
 
 export type SectionName = (typeof links)[number]["sectionName"];
 
@@ -7,5 +7,6 @@ export type Experiences = {
   title: string;
   date: string;
   coverImage: string;
+  icons?: string[];
   excerpt: string;
 };

@@ -2,6 +2,14 @@
 title: "Sound Event Detection"
 date: "2023-03-16"
 coverImage: "https://i.ibb.co/QkQYCKQ/sed1.png"
+icons:
+  [
+    "logos:python",
+    "logos:jupyter",
+    "skill-icons:flask-dark",
+    "vscode-icons:file-type-html",
+    "devicon:tailwindcss",
+  ]
 excerpt: "testtist"
 ---
 

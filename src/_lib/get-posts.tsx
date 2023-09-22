@@ -26,12 +26,13 @@ export function getAllPosts() {
         title: matterResult.data.title,
         date: getFormattedDate(matterResult.data.date),
         coverImage: matterResult.data.coverImage,
+        icons: matterResult.data.icons,
         excerpt: matterResult.data.excerpt,
       };
       return blogPosts;
     })
     // sorts post by date
-    .sort((a, b) => (a.date < b.date ? 1 : -1));
+    .sort((postA, postB) => (postA.date < postB.date ? 1 : -1));
   return allPostData;
 }
 
@@ -51,6 +52,7 @@ export async function getPostData(slug: string) {
     title: matterResult.data.title,
     date: getFormattedDate(matterResult.data.date),
     coverImage: matterResult.data.coverImage,
+    icons: matterResult.data.icons,
     excerpt: matterResult.data.excerpt,
     contentHtml,
   };

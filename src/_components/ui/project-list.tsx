@@ -1,6 +1,8 @@
 "use client";
 
+import { Fragment } from "react";
 import { motion } from "framer-motion";
+import { Icon } from "@iconify/react/dist/iconify.js";
 import { ButtonRead, ButtonToGithub } from "@components/shared/button-custom";
 import { ImageFull } from "@components/shared/image-custom";
 
@@ -11,7 +13,7 @@ type Props = {
 
 export default function ProjectList({ post, index }: Props) {
   const i = index;
-  const { title, date, coverImage, excerpt } = post;
+  const { title, date, coverImage, icons, excerpt } = post;
 
   return (
     <motion.li
@@ -34,7 +36,18 @@ export default function ProjectList({ post, index }: Props) {
                 <h5>{date}</h5>
               </div>
               <h4>{title}</h4>
-              <h5>Made with:</h5>
+              <div className="inline-flex gap-2">
+                <h5>Tech stack:</h5>
+                <span className="inline-flex gap-1 text-2xl">
+                  {icons.map((icon: string, index: number) => {
+                    return (
+                      <Fragment key={index}>
+                        <Icon icon={`${icon}`} />
+                      </Fragment>
+                    );
+                  })}
+                </span>
+              </div>
               <p className="text_black">{excerpt}</p>
               <div className="flex flex-row gap-2">
                 <ButtonToGithub

@@ -3,6 +3,7 @@ type BlogPosts = {
   title: string;
   date: string;
   coverImage: string;
+  icons: string[];
   excerpt: string;
 };
 
